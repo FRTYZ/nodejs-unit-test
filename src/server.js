@@ -3,7 +3,9 @@ const app = express();
 
 app.use(express.json());
 
-let users = [{ id: 1, name: 'Ali' }];
+const PORT = 8000
+
+let users = [{ id: 1, name: 'Firat' }];
 
 app.get('/users', (req, res) => {
     res.json(users)
@@ -31,6 +33,10 @@ app.delete('/users/:id', (req,res) => {
     users = users.find(item => item.id !== parseInt(req.params.id));
 
     res.status(204).send()
+})
+
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
 })
 
 module.exports = app;
