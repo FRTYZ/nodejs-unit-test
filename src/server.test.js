@@ -11,7 +11,6 @@ describe('User API Tests', () => {
     });
 
     it('should create a new user', async() => {
-
         const res = await request(app)
             .post('/users')
             .send({name: 'Mehmet'});
